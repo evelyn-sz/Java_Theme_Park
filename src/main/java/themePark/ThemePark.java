@@ -1,6 +1,9 @@
 package themePark;
 
+import attractions.Attraction;
 import behaviours.IReviewed;
+
+import java.util.ArrayList;
 
 public class ThemePark implements IReviewed {
     private String name;
