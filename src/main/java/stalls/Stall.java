@@ -1,19 +1,16 @@
 package stalls;
 
-public abstract class Stall {
+import themePark.ThemePark;
 
-    private String name;
+public abstract class Stall extends ThemePark {
+
     private String ownerName;
     private ParkingSpot parkingSpot;
 
-    public Stall(String name, String ownerName, ParkingSpot parkingSpot) {
-        this.name = name;
+    public Stall(String name, int rating, String ownerName, ParkingSpot parkingSpot) {
+        super(name, rating);
         this.ownerName = ownerName;
         this.parkingSpot = parkingSpot;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public String getOwnerName() {
