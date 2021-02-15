@@ -50,4 +50,11 @@ public class RollercoasterTest {
         assertEquals(17, rollerCoaster.priceFor(tallAdult), 0.0);
         assertEquals(8.50, rollerCoaster.priceFor(mediumAdult), 0.0);
     }
+
+    @Test
+    public void checksHeightAndAge(){
+        assertEquals(true, rollerCoaster.isAllowedTo(mediumTeen));
+        assertEquals(false, rollerCoaster.isAllowedTo(mediumKid));
+        assertEquals(false, rollerCoaster.isAllowedTo(shortKid));
+    }
 }
