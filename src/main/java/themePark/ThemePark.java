@@ -1,6 +1,8 @@
 package themePark;
 
-public class ThemePark {
+import behaviours.IReviewed;
+
+public class ThemePark implements IReviewed {
     private String name;
     private int rating;
 
