@@ -9,20 +9,20 @@ import static org.junit.Assert.assertEquals;
 public class RollercoasterTest {
 
     RollerCoaster rollerCoaster;
-    Visitor visitor;
-    Visitor visitor2;
-    Visitor visitor3;
-    Visitor visitor4;
-    Visitor visitor5;
+    Visitor tallAdult;
+    Visitor mediumAdult;
+    Visitor mediumTeen;
+    Visitor mediumKid;
+    Visitor shortKid;
 
     @Before
     public void setUp() {
         rollerCoaster = new RollerCoaster("Blue Ridge", 10);
-        visitor =   new Visitor(18, 201, 10);
-        visitor2 =  new Visitor(18, 150, 10);
-        visitor3 =  new Visitor(18, 150, 10);
-        visitor4 =  new Visitor(11, 150, 10);
-        visitor5 =  new Visitor(11, 140, 10);
+        tallAdult =     new Visitor(18, 201, 10);
+        mediumAdult =   new Visitor(18, 150, 10);
+        mediumTeen =    new Visitor(14, 150, 10);
+        mediumKid =     new Visitor(11, 150, 10);
+        shortKid =      new Visitor(11, 140, 10);
     }
 
     @Test
@@ -47,7 +47,7 @@ public class RollercoasterTest {
 
     @Test
     public void chargesBasedOnHeight(){
-        assertEquals(17, rollerCoaster.priceFor(visitor), 0.0);
-        assertEquals(8.50, rollerCoaster.priceFor(visitor2), 0.0);
+        assertEquals(17, rollerCoaster.priceFor(tallAdult), 0.0);
+        assertEquals(8.50, rollerCoaster.priceFor(mediumAdult), 0.0);
     }
 }
