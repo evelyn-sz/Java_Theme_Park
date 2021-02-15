@@ -9,10 +9,12 @@ import static org.junit.Assert.assertEquals;
 public class PlaygroundTest {
     Playground playground;
     Visitor shortKid;
+    Visitor mediumAdult;
 
     @Before
     public void setUp() throws Exception {
         playground = new Playground("Fun Zone", 7);
+        mediumAdult =   new Visitor(18, 150, 10);
         shortKid =      new Visitor(11, 140, 10);
 
     }
@@ -39,6 +41,12 @@ public class PlaygroundTest {
     @Test
     public void chargesVisitor(){
         assertEquals(3, playground.priceFor(shortKid), 0.0);
+    }
+
+    @Test
+    public void wontLetOver15In(){
+        assertEquals(true, playground.isAllowedTo(shortKid));
+        assertEquals(false, playground.isAllowedTo(mediumAdult));
     }
 
 

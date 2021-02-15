@@ -1,9 +1,10 @@
 package attractions;
 
+import behaviours.ISecurity;
 import behaviours.ITicketed;
 import people.Visitor;
 
-public class Playground extends Attraction implements ITicketed {
+public class Playground extends Attraction implements ITicketed, ISecurity {
 
     private double price;
 
@@ -18,6 +19,10 @@ public class Playground extends Attraction implements ITicketed {
 
     public double priceFor(Visitor visitor) {
         return price;
+    }
+
+    public boolean isAllowedTo(Visitor visitor){
+        return visitor.getAge() < 15;
     }
 
 }
